@@ -8,7 +8,7 @@ import streamlit as st
 #Title for app
 st.write("""
 # Diabetes Detection App 2.0
-Detect if someone has diabetes using machine learning and Python
+Detect if someone has diabetes using machine learning and Python \n
 An App by Saad Mankarious
 """)
 
