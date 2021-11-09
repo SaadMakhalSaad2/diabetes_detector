@@ -7,7 +7,7 @@ import streamlit as st
 
 #Title for app
 st.write("""
-# Diabetes Detection App
+# Diabetes Detection App 2.0
 Detect if someone has diabetes using machine learning and Python
 """)
 
@@ -16,7 +16,7 @@ Detect if someone has diabetes using machine learning and Python
 # st.image(image, caption = 'Diabetes', use_column_width = True)
 
 #Get Data
-df= pd.read_csv('C:/Users/User/Desktop/python/Diabetes Detector/diabetes.csv')
+df= pd.read_csv('diabetes.csv')
 
 #Set subheader on the web app
 st.subheader('Data Information:')
