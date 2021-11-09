@@ -81,8 +81,17 @@ prediction = RandomForestClassifier.predict(user_input)
 
 
 # Set a subheadr and display the classification
-st.subheader('Classification: ')
-st.write(prediction)
+# st.header('Classification: ')
+if prediction ==1:
+    st.header("""
+        Has diabetes
+    """)
+else:
+    st.header("""
+           Doesn't have diabetes
+       """)
+
+
 
 
 
