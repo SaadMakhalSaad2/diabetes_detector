@@ -9,6 +9,7 @@ import streamlit as st
 st.write("""
 # Diabetes Detection App 2.0
 Detect if someone has diabetes using machine learning and Python
+An App by Saad Mankarious
 """)
 
 #open and display image
