@@ -12,8 +12,8 @@ Detect if someone has diabetes using machine learning and Python
 """)
 
 #open and display image
-image = Image.open('C:/Users/User/Desktop/python/Diabetes Detector/causes-of-diabetes.jfif')
-st.image(image, caption = 'Diabetes', use_column_width = True)
+# image = Image.open('C:/Users/User/Desktop/python/Diabetes Detector/causes-of-diabetes.jfif')
+# st.image(image, caption = 'Diabetes', use_column_width = True)
 
 #Get Data
 df= pd.read_csv('C:/Users/User/Desktop/python/Diabetes Detector/diabetes.csv')
