@@ -7,17 +7,16 @@ import streamlit as st
 
 #Title for app
 st.write("""
-# Diabetes Detection App 2.0
-Detect if someone has diabetes using machine learning and Python \n
-An App by Saad Mankarious
+# ALA Student GPA Predictor
+Using social and academic metrics to predict students' GPA at the African Leadership Academy in Johannesburg, South Africa \n
 """)
 
 #open and display image
-image = Image.open('causes-of-diabetes.jfif')
+image = Image.open('C:/Users/User/Desktop/diabetes_detector/ala.jpg')
 st.image(image, caption = 'Diabetes', use_column_width = True)
 
 #Get Data
-df= pd.read_csv('diabetes.csv')
+df= pd.read_csv('C:/Users/User/Desktop/diabetes_detector/diabetes.csv')
 
 #Set subheader on the web app
 st.subheader('Data Information:')
@@ -38,24 +37,22 @@ X_train, X_test ,  Y_train, Y_test = train_test_split(X, Y, test_size=0.25, rand
 
 # Get feature input for the user
 def get_user_input():
-    pregnancies = st.sidebar.slider('pregnancies', 0, 17, 3)
-    glucose = st.sidebar.slider('glucose', 0, 199, 117)
-    blood_pressure = st.sidebar.slider('blood_pressure', 0, 122, 72)
-    skin_thickness = st.sidebar.slider('skin_thickness', 0, 99, 23)
-    insulin = st.sidebar.slider('insulin', 0.0, 846.0, 30.0)
-    bmi = st.sidebar.slider('bmi', 0.0, 67.1, 32.0)
-    dpf = st.sidebar.slider('dpf', 0.078, 2.42,0.3725)
-    age = st.sidebar.slider('age', 21, 81, 29)
-    # Store dictionary into variable
+    pregnancies = st.sidebar.slider('Hours of Sleep', 0, 24, 3)
+    glucose = st.sidebar.slider('Hours of Study', 0, 24, 3)
+    skin_thickness = st.sidebar.slider('Hours on Social Media**', 0, 24, 2)
+    blood_pressure = st.sidebar.slider('Previous GPA', 0, 100, 72)
+    skin_thickness = st.sidebar.slider('Weeks to Finals', 1, 20, 10)
+    skin_thickness = st.sidebar.slider('Class Attendance Rate', 0, 100, 50)
+
     user_data = {
-        'pregnancies' : pregnancies,
-        'glucose': glucose,
-        'blood_pressure': blood_pressure,
-        'skin_thickness': skin_thickness,
-        'insulin': insulin,
-        'bmi': bmi,
-        'dpf': dpf,
-        'age': age,
+        'Hours of sleep' : pregnancies,
+        'Hours of Study': glucose,
+        'Previous GPA': blood_pressure,
+        'Weeks to Finals': skin_thickness,
+        ' ': 0,
+        'bmi': 0,
+        'dpf': 0,
+        'age': 0,
     }
     # Transform the data into a data frame
     features = pd.DataFrame(user_data, index = [0])
@@ -73,7 +70,7 @@ RandomForestClassifier.fit(X_train, Y_train)
 
 
 #show the model metrics
-st.subheader('Accuracy:')
+st.subheader('Final GPA:')
 st.write(str(accuracy_score(Y_test, RandomForestClassifier.predict(X_test)) * 100)+'%')
 
 # Store the model's predictions ina viriable
@@ -82,14 +79,14 @@ prediction = RandomForestClassifier.predict(user_input)
 
 # Set a subheadr and display the classification
 # st.header('Classification: ')
-if prediction ==1:
-    st.header("""
-        Has diabetes
-    """)
-else:
-    st.header("""
-           Doesn't have diabetes
-       """)
+# if prediction ==1:
+#     st.header("""
+#         Final GPA: C
+#     """)
+# else:
+#     st.header("""
+#            Final GPA: A
+#        """)
 
 
 
